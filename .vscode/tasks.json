@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "opencv4.6.0 compile task", //任务名称，要和launch.json的"preLaunchTask"字段对应
+			"command": "D:/TDM-GCC-64/bin/g++.exe", //编译器路径
+			"args": [
+				"-g", //控制台编译时输入的-g,表示生成调试有关信息,编译生成可执行文件调试
+				"-std=c++11",
+        		"-fexec-charset=GBK",// 令mingw按GBK编码⽣成exe⽂件 GBK
+        		"-finput-charset=UTF-8",// 令mingw按UTF-8编码处理（此参数可以不设置）//
+				"${file}",//要编译的文件，默认只能编译单个文件
+				"-o", //指定生成的可执行文件的名字,编译不加 -o 默认生成就是a.exe
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-I","D:/opencv/build/x64/MinGW/install/include",
+                "-I","D:/opencv/build/x64/MinGW/install/include/opencv2",
+                "-I ${fileDirname}\\..\\include",//添加本地文件的头文件路径,否则提示头文件找不到
+				"-L","D:/opencv/build/x64/MinGW/bin",
+				"-l","libopencv_world460"
+				
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"  //当前工作目录
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true // 开启编译快捷键, ctrl + shift + B
+			},
+			"detail": "编译器: D:/TDM-GCC-64/bin/g++.exe"
+		}
+	]
+}

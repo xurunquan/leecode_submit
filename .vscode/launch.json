@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "opencv4.6.0 debuge",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,  //这里如果为 false，则说明调试直接运行。（反之则停止）
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true, //是否调用外部cmd
+            "MIMode": "gdb", 
+            "miDebuggerPath": "D:/TDM-GCC-64/gdb64/bin/gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": false
+                }
+            ],
+            "preLaunchTask": "opencv4.6.0 compile task"
+        }
+    ]
+}
