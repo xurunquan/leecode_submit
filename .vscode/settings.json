@@ -24,7 +24,9 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "list": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "map": "cpp",
+        "set": "cpp"
     },
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
